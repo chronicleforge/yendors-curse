@@ -1,0 +1,6 @@
+[submodule "NetHack"]
+	path = NetHack
+	url = https://github.com/NetHack/NetHack.git
+[submodule "lua"]
+	path = lua
+	url = https://github.com/lua/lua.git

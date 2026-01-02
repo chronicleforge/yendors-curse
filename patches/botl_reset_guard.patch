@@ -1,0 +1,20 @@
+diff --git a/src/botl.c b/src/botl.c
+index f3ad98aa5..6c684cca4 100644
+--- a/src/botl.c
++++ b/src/botl.c
+@@ -1510,8 +1510,13 @@ init_blstats(void)
+     int i, j;
+ 
+     if (initalready) {
+-        impossible("init_blstats called more than once.");
+-        return;
++        /* iOS PATCH (2025-10-20): Allow re-init after nh_restart()
++         * ROOT CAUSE: After nh_restart() (used during Continue), status buffers
++         * are freed but static guard persists, blocking re-initialization.
++         * SOLUTION: Reset guard and continue instead of impossible() + return.
++         * This is safe because status_finish() already freed old buffers. */
++        fprintf(stderr, "[BOTL_PATCH] init_blstats() - resetting guard for nh_restart()\n");
++        initalready = FALSE;  /* Reset guard to allow re-init */
+     }
+     for (i = 0; i <= 1; ++i) {
+         for (j = 0; j < MAXBLSTATS; ++j) {

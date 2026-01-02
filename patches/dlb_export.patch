@@ -1,0 +1,40 @@
+diff --git a/include/dlb.h b/include/dlb.h
+index 2fff03046..56261e97d 100644
+--- a/include/dlb.h
++++ b/include/dlb.h
+@@ -4,6 +4,9 @@
+ 
+ #ifndef DLB_H
+ #define DLB_H
++
++#include "../../src/nethack_export.h"
++
+ /* definitions for data library */
+ 
+ #ifdef DLB
+@@ -75,16 +78,16 @@ typedef struct dlb_handle {
+ #define DLB_P dlb *
+ #endif
+ 
+-boolean dlb_init(void);
+-void dlb_cleanup(void);
++NETHACK_EXPORT boolean dlb_init(void);
++NETHACK_EXPORT void dlb_cleanup(void);
+ 
+-dlb *dlb_fopen(const char *, const char *);
+-int dlb_fclose(DLB_P);
+-int dlb_fread(char *, int, int, DLB_P);
+-int dlb_fseek(DLB_P, long, int);
+-char *dlb_fgets(char *, int, DLB_P);
+-int dlb_fgetc(DLB_P);
+-long dlb_ftell(DLB_P);
++NETHACK_EXPORT dlb *dlb_fopen(const char *, const char *);
++NETHACK_EXPORT int dlb_fclose(DLB_P);
++NETHACK_EXPORT int dlb_fread(char *, int, int, DLB_P);
++NETHACK_EXPORT int dlb_fseek(DLB_P, long, int);
++NETHACK_EXPORT char *dlb_fgets(char *, int, DLB_P);
++NETHACK_EXPORT int dlb_fgetc(DLB_P);
++NETHACK_EXPORT long dlb_ftell(DLB_P);
+ 
+ /* Resource DLB entry points */
+ #ifdef DLBRSRC

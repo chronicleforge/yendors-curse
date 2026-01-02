@@ -1,0 +1,21 @@
+diff --git a/src/hack.c b/src/hack.c
+index 000000000..000000001 100644
+--- a/src/hack.c
++++ b/src/hack.c
+@@ -3781,6 +3781,17 @@ void
+ lookaround(void)
+ {
++#ifdef IOS_PLATFORM
++    /* iOS travel interrupt: Check if user requested new travel destination.
++     * This is called at the START of each travel step, allowing immediate
++     * response to new taps instead of waiting for current travel to complete.
++     * Similar to how MICRO/WIN32 uses kbhit() for interrupt checking. */
++    extern volatile int ios_travel_interrupt_pending;
++    if (ios_travel_interrupt_pending) {
++        ios_travel_interrupt_pending = 0;
++        return;  /* Return early - nomul(0) already called by bridge */
++    }
++#endif
+     coordxy x, y;
+     coordxy i, x0 = 0, y0 = 0, m0 = 1, i0 = 9;
+     int corrct = 0, noturn = 0;

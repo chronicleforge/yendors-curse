@@ -1,0 +1,753 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0A88465202042C084928B47 /* libnethack.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A88465202042C084928B46 /* libnethack.dylib */; };
+		D0A88465202042C084928B48 /* libnethack.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D0A88465202042C084928B46 /* libnethack.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56E9109F2E783149000D2BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56E910872E783148000D2BAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56E9108E2E783148000D2BAF;
+			remoteInfo = nethack;
+		};
+		56E910A92E783149000D2BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56E910872E783148000D2BAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56E9108E2E783148000D2BAF;
+			remoteInfo = nethack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0A88465202042C084928B49 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D0A88465202042C084928B48 /* libnethack.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		56E9108F2E783148000D2BAF /* nethack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nethack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E9109E2E783149000D2BAF /* nethackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nethackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E910A82E783149000D2BAF /* nethackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nethackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D82E4490324B62B2E156E7 /* NetHackBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetHackBridge.swift; sourceTree = "<group>"; };
+		7EF33A19459C4F3AAC471FAA /* RealNetHackBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealNetHackBridge.h; sourceTree = "<group>"; };
+		D0A88465202042C084928B46 /* libnethack.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnethack.dylib; path = build/libnethack.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		56E910912E783148000D2BC0 /* Exceptions for "nethack" folder in "nethack" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				action_registry.c,
+				action_system.c,
+				Info.plist,
+				ios_append_slash.c,
+				ios_autoplay.c,
+				ios_character_save.c,
+				ios_character_status.c,
+				ios_container_bridge.c,
+				ios_container_bridge.h,
+				ios_dungeon.c,
+				ios_dylib_lifecycle.c,
+				ios_dylib_stubs.c,
+				ios_event_driven.c,
+				ios_filesys.c,
+				ios_game_lifecycle.c,
+				ios_game_state_buffer.c,
+				ios_memory_integration.c,
+				ios_msg_history.c,
+				ios_newgame.c,
+				ios_nhlua_patch.c,
+				ios_notifications.m,
+				ios_object_bridge.c,
+				ios_render_queue.c,
+				ios_restore.c,
+				ios_save_integration.c,
+				ios_slot_manager.c,
+				ios_stubs_missing.c,
+				ios_winprocs.c,
+				NetHackCoreIntegration.c,
+				nhlua_debug.c,
+				RealNetHackBridge.c,
+			);
+			target = 56E9108E2E783148000D2BAF /* nethack */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		56E910912E783148000D2BAF /* nethack */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				56E910912E783148000D2BC0 /* Exceptions for "nethack" folder in "nethack" target */,
+			);
+			path = nethack;
+			sourceTree = "<group>";
+		};
+		56E910A12E783149000D2BAF /* nethackTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = nethackTests;
+			sourceTree = "<group>";
+		};
+		56E910AB2E783149000D2BAF /* nethackUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = nethackUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56E9108C2E783148000D2BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A88465202042C084928B47 /* libnethack.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E9109B2E783149000D2BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E910A52E783149000D2BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56E910862E783148000D2BAF = {
+			isa = PBXGroup;
+			children = (
+				56E910912E783148000D2BAF /* nethack */,
+				56E910A12E783149000D2BAF /* nethackTests */,
+				56E910AB2E783149000D2BAF /* nethackUITests */,
+				56E910902E783148000D2BAF /* Products */,
+				78D82E4490324B62B2E156E7 /* NetHackBridge.swift */,
+				7EF33A19459C4F3AAC471FAA /* RealNetHackBridge.h */,
+				D0A88465202042C084928B46 /* libnethack.dylib */,
+			);
+			sourceTree = "<group>";
+		};
+		56E910902E783148000D2BAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56E9108F2E783148000D2BAF /* nethack.app */,
+				56E9109E2E783149000D2BAF /* nethackTests.xctest */,
+				56E910A82E783149000D2BAF /* nethackUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56E9108E2E783148000D2BAF /* nethack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56E910B22E783149000D2BAF /* Build configuration list for PBXNativeTarget "nethack" */;
+			buildPhases = (
+				D0A88465202042C084928B50 /* Build NetHack Dynamic Library */,
+				56E9108B2E783148000D2BAF /* Sources */,
+				56E9108C2E783148000D2BAF /* Frameworks */,
+				56E9108D2E783148000D2BAF /* Resources */,
+				D0A88465202042C084928B49 /* Embed Libraries */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				56E910912E783148000D2BAF /* nethack */,
+			);
+			name = nethack;
+			packageProductDependencies = (
+			);
+			productName = nethack;
+			productReference = 56E9108F2E783148000D2BAF /* nethack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56E9109D2E783149000D2BAF /* nethackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56E910B52E783149000D2BAF /* Build configuration list for PBXNativeTarget "nethackTests" */;
+			buildPhases = (
+				56E9109A2E783149000D2BAF /* Sources */,
+				56E9109B2E783149000D2BAF /* Frameworks */,
+				56E9109C2E783149000D2BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56E910A02E783149000D2BAF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				56E910A12E783149000D2BAF /* nethackTests */,
+			);
+			name = nethackTests;
+			packageProductDependencies = (
+			);
+			productName = nethackTests;
+			productReference = 56E9109E2E783149000D2BAF /* nethackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		56E910A72E783149000D2BAF /* nethackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56E910B82E783149000D2BAF /* Build configuration list for PBXNativeTarget "nethackUITests" */;
+			buildPhases = (
+				56E910A42E783149000D2BAF /* Sources */,
+				56E910A52E783149000D2BAF /* Frameworks */,
+				56E910A62E783149000D2BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56E910AA2E783149000D2BAF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				56E910AB2E783149000D2BAF /* nethackUITests */,
+			);
+			name = nethackUITests;
+			packageProductDependencies = (
+			);
+			productName = nethackUITests;
+			productReference = 56E910A82E783149000D2BAF /* nethackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56E910872E783148000D2BAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					56E9108E2E783148000D2BAF = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					56E9109D2E783149000D2BAF = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = 56E9108E2E783148000D2BAF;
+					};
+					56E910A72E783149000D2BAF = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = 56E9108E2E783148000D2BAF;
+					};
+				};
+			};
+			buildConfigurationList = 56E9108A2E783148000D2BAF /* Build configuration list for PBXProject "nethack" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56E910862E783148000D2BAF;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 56E910902E783148000D2BAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56E9108E2E783148000D2BAF /* nethack */,
+				56E9109D2E783149000D2BAF /* nethackTests */,
+				56E910A72E783149000D2BAF /* nethackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56E9108D2E783148000D2BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E9109C2E783149000D2BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E910A62E783149000D2BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0A88465202042C084928B50 /* Build NetHack Dynamic Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/build_nethack_dylib.sh",
+				"$(PROJECT_DIR)/nethack/RealNetHackBridge.c",
+				"$(PROJECT_DIR)/nethack/ios_winprocs.c",
+				"$(PROJECT_DIR)/nethack/ios_notifications.m",
+				"$(PROJECT_DIR)/nethack/ios_dylib_stubs.c",
+				"$(PROJECT_DIR)/nethack/ios_filesys.c",
+				"$(PROJECT_DIR)/nethack/ios_newgame.c",
+				"$(PROJECT_DIR)/nethack/ios_game_lifecycle.c",
+				"$(PROJECT_DIR)/nethack/ios_dylib_lifecycle.c",
+				"$(PROJECT_DIR)/nethack/ios_autoplay.c",
+				"$(PROJECT_DIR)/nethack/ios_object_bridge.c",
+				"$(PROJECT_DIR)/nethack/ios_game_state_buffer.c",
+				"$(PROJECT_DIR)/nethack/ios_render_queue.c",
+				"$(PROJECT_DIR)/nethack/ios_restore.c",
+				"$(PROJECT_DIR)/nethack/action_registry.c",
+				"$(PROJECT_DIR)/nethack/action_system.c",
+				"$(PROJECT_DIR)/nethack/ios_dungeon.c",
+				"$(PROJECT_DIR)/nethack/ios_save_integration.c",
+				"$(PROJECT_DIR)/nethack/ios_slot_manager.c",
+				"$(PROJECT_DIR)/nethack/ios_character_save.c",
+				"$(PROJECT_DIR)/nethack/ios_append_slash.c",
+			);
+			name = "Build NetHack Dynamic Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(PROJECT_DIR)/build/libnethack.dylib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$PROJECT_DIR\" && ./build_nethack_auto.sh\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56E9108B2E783148000D2BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E9109A2E783149000D2BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E910A42E783149000D2BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56E910A02E783149000D2BAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56E9108E2E783148000D2BAF /* nethack */;
+			targetProxy = 56E9109F2E783149000D2BAF /* PBXContainerItemProxy */;
+		};
+		56E910AA2E783149000D2BAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56E9108E2E783148000D2BAF /* nethack */;
+			targetProxy = 56E910A92E783149000D2BAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		56E910B02E783149000D2BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		56E910B12E783149000D2BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56E910B32E783149000D2BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = nethack/nethack.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/origin/lua-5.4.6",
+					"$(PROJECT_DIR)/origin/NetHack/include",
+					"$(PROJECT_DIR)/origin/NetHack/sys/share",
+				);
+				INFOPLIST_FILE = nethack/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yendor's Curse";
+				INFOPLIST_KEY_UIAppFonts = "Fonts/PirataOne-Regular.ttf Fonts/Cinzel-Variable.ttf";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build",
+					"$(PROJECT_DIR)/nethack/build",
+					"$(PROJECT_DIR)/nethack",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lnethack",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.manyminds.nethack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "nethack-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56E910B42E783149000D2BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = nethack/nethack.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/origin/lua-5.4.6",
+					"$(PROJECT_DIR)/origin/NetHack/include",
+					"$(PROJECT_DIR)/origin/NetHack/sys/share",
+				);
+				INFOPLIST_FILE = nethack/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yendor's Curse";
+				INFOPLIST_KEY_UIAppFonts = "Fonts/PirataOne-Regular.ttf Fonts/Cinzel-Variable.ttf";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build",
+					"$(PROJECT_DIR)/nethack/build",
+					"$(PROJECT_DIR)/nethack",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lnethack",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.manyminds.nethack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "nethack-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56E910B62E783149000D2BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.manyminds.nethackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "nethack-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nethack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nethack";
+			};
+			name = Debug;
+		};
+		56E910B72E783149000D2BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.manyminds.nethackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "nethack-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nethack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nethack";
+			};
+			name = Release;
+		};
+		56E910B92E783149000D2BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				GENERATE_INFOPLIST_FILE = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.manyminds.nethackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "nethack-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = nethack;
+			};
+			name = Debug;
+		};
+		56E910BA2E783149000D2BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = Y5LB822U3L;
+				GENERATE_INFOPLIST_FILE = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.manyminds.nethackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "nethack-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = nethack;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56E9108A2E783148000D2BAF /* Build configuration list for PBXProject "nethack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E910B02E783149000D2BAF /* Debug */,
+				56E910B12E783149000D2BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56E910B22E783149000D2BAF /* Build configuration list for PBXNativeTarget "nethack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E910B32E783149000D2BAF /* Debug */,
+				56E910B42E783149000D2BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56E910B52E783149000D2BAF /* Build configuration list for PBXNativeTarget "nethackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E910B62E783149000D2BAF /* Debug */,
+				56E910B72E783149000D2BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56E910B82E783149000D2BAF /* Build configuration list for PBXNativeTarget "nethackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E910B92E783149000D2BAF /* Debug */,
+				56E910BA2E783149000D2BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56E910872E783148000D2BAF /* Project object */;
+}

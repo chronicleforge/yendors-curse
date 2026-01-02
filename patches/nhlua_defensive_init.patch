@@ -1,0 +1,33 @@
+diff --git a/src/nhlua.c b/src/nhlua.c
+index b43e4c089..5837fdcc0 100644
+--- a/src/nhlua.c
++++ b/src/nhlua.c
+@@ -1250,10 +1250,25 @@ get_nh_lua_variables(void)
+ {
+     char *key = NULL;
+ 
++    /* iOS DEFENSIVE FIX (2025-10-20):
++       Match restore_luadata() behavior (line 1309-1310).
++       If Lua core was never initialized (e.g., due to DLB loading issues or
++       async initialization), attempt to initialize it now rather than panic.
++       This allows graceful degradation instead of immediate crash.
++       
++       Root Cause: restore_luadata() has defensive init, but get_nh_lua_variables()
++       had panic(). During iOS game startup with zone-based snapshots, save_currentstate()
++       is called before Lua is fully ready, triggering the panic.
++    */
+     if (!gl.luacore) {
+-        panic("nh luacore not inited");
+-        /*NOTREACHED*/
+-        return key;
++        fprintf(stderr, "[LUACORE_FIX] Lua core not initialized, attempting initialization...\n");
++        l_nhcore_init();  /* Try to initialize Lua (matches restore_luadata:1310) */
++    }
++
++    /* If initialization still failed, return empty string gracefully */
++    if (!gl.luacore) {
++        fprintf(stderr, "[LUACORE_FIX] ERROR: Lua initialization failed, returning empty variables\n");
++        return dupstr(emptystr);  /* Graceful degradation instead of panic */
+     }
+     lua_getglobal(gl.luacore, "get_variables_string");
+     if (lua_type(gl.luacore, -1) == LUA_TFUNCTION) {

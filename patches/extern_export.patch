@@ -1,0 +1,45 @@
+diff --git a/include/extern.h b/include/extern.h
+index 670fb77a8..0db74e4bb 100644
+--- a/include/extern.h
++++ b/include/extern.h
+@@ -5,6 +5,10 @@
+ #ifndef EXTERN_H
+ #define EXTERN_H
+ 
++#ifdef BUILD_DYLIB
++#include "nethack_export.h"
++#endif
++
+ /*
+  * The placements of the NONNULLARG* and NONNULLPTRS macros were done
+  * using the following rules:
+@@ -2062,6 +2066,9 @@ extern int l_obj_register(lua_State *) NONNULLARG1;
+ extern void l_nhcore_init(void);
+ extern void l_nhcore_done(void);
+ extern void l_nhcore_call(int);
++#ifdef BUILD_DYLIB
++NETHACK_EXPORT
++#endif
+ extern lua_State * nhl_init(nhl_sandbox_info *) NONNULLARG1;
+ /* nhl_done contains a test for NULL arg1, preventing NONNULLARG1 */
+ extern void nhl_done(lua_State *) NO_NNARGS;
+@@ -2769,6 +2776,7 @@ extern void free_CapMons(void);
+ 
+ /* ### save.c ### */
+ 
++extern void savegamestate(NHFILE *);  /* Made public for iOS live saves */
+ extern int dosave(void);
+ extern int dosave0(void);
+ extern boolean tricked_fileremoved(NHFILE *, char *) NONNULLARG2;
+@@ -3754,7 +3762,11 @@ extern int glyph2ttychar(int);
+ extern int glyph2symidx(int);
+ extern char *encglyph(int);
+ extern int decode_glyph(const char *str, int *glyph_ptr) NONNULLPTRS;
++#ifdef BUILD_DYLIB
++extern __attribute__((visibility("default"))) char *decode_mixed(char *, const char *) NONNULLARG1;
++#else
+ extern char *decode_mixed(char *, const char *) NONNULLARG1;
++#endif
+ extern void genl_putmixed(winid, int, const char *) NONNULLARG3;
+ extern void genl_display_file(const char *, boolean) NONNULLARG1;
+ extern boolean menuitem_invert_test(int, unsigned, boolean);

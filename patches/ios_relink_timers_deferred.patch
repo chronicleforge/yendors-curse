@@ -1,0 +1,52 @@
+--- a/src/timeout.c
++++ b/src/timeout.c
+@@ -2600,8 +2600,19 @@ timer_is_local(timer_element *timer)
+     case TIMER_GLOBAL:
+         return FALSE;
+     case TIMER_OBJECT:
++#ifdef IOS_PLATFORM
++        /* iOS PATCH: If timer still needs_fixup, arg contains o_id not pointer.
++         * Cannot call obj_is_local() - assume local (safe default for level saves). */
++        if (timer->needs_fixup)
++            return TRUE;
++#endif
+         return obj_is_local(timer->arg.a_obj);
+     case TIMER_MONSTER:
++#ifdef IOS_PLATFORM
++        /* iOS PATCH: Same for monster timers (though not currently used). */
++        if (timer->needs_fixup)
++            return TRUE;
++#endif
+         return mon_is_local(timer->arg.a_monst);
+     }
+     panic("timer_is_local");
+@@ -2753,9 +2764,29 @@ relink_timers(boolean ghostly)
+                         panic("relink_timers 1");
+                 } else
+                     nid = curr->arg.a_uint;
++#ifdef IOS_PLATFORM
++                /* iOS PATCH (2025-12-16): Allow deferred timer relinking.
++                 * ROOT CAUSE: getlev() calls relink_timers() BEFORE restgamestate()
++                 * loads inventory. If timer references inventory item (e.g., corpse
++                 * picked up from another level), find_oid() fails.
++                 *
++                 * FIX: Use temp variable to avoid corrupting arg union!
++                 * arg.a_uint (o_id) and arg.a_obj (pointer) share same memory.
++                 * If we set arg.a_obj = NULL, we LOSE the o_id for later retry.
++                 * Keep needs_fixup set, ios_restore_complete() retries later. */
++                {
++                    struct obj *found = find_oid(nid);
++                    if (!found) {
++                        /* Object not found yet - keep o_id intact for retry */
++                        continue;
++                    }
++                    curr->arg.a_obj = found;
++                }
++#else
+                 curr->arg.a_obj = find_oid(nid);
+                 if (!curr->arg.a_obj)
+                     panic("can't find o_id %d", nid);
++#endif
+                 curr->needs_fixup = 0;
+             } else if (curr->kind == TIMER_MONSTER) {
+                 panic("relink_timers: no monster timer implemented");

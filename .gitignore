@@ -1,0 +1,13 @@
+# Build artifacts
+build/
+*.o
+*.dylib
+DerivedData/
+
+# macOS
+.DS_Store
+*.swp
+
+# Xcode user data
+xcuserdata/
+*.xcworkspace/xcuserdata/

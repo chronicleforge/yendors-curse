@@ -1,0 +1,16 @@
+diff --git a/src/cfgfiles.c b/src/cfgfiles.c
+index ca05d35cd..431319f7c 100644
+--- a/src/cfgfiles.c
++++ b/src/cfgfiles.c
+@@ -1886,6 +1886,11 @@ vconfig_error_add(const char *str, va_list the_args)
+ void
+ assure_syscf_file(void)
+ {
++#if defined(IOS_PLATFORM) || defined(MACOS_CLI)
++    /* iOS/macOS CLI doesn't require a system config file - user .nethackrc is sufficient */
++    fprintf(stderr, "[IOS/MACOS] Skipping SYSCF check - not required\n");
++    return;
++#endif
+     int fd;
+ 
+ #ifdef WIN32

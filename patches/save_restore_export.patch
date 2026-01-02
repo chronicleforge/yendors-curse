@@ -1,0 +1,58 @@
+diff --git a/src/restore.c b/src/restore.c
+index 59bc231ad..92b9c3340 100644
+--- a/src/restore.c
++++ b/src/restore.c
+@@ -24,14 +24,14 @@ staticfn void rest_levl(NHFILE *);
+ staticfn void rest_stairs(NHFILE *);
+ #ifndef SFCTOOL
+ staticfn void ghostfruit(struct obj *);
+-staticfn boolean restgamestate(NHFILE *);
++boolean restgamestate(NHFILE *);  /* Made public for iOS integration */
+ staticfn void restlevelstate(void);
+ staticfn int restlevelfile(xint8);
+ staticfn void rest_bubbles(NHFILE *);
+ staticfn void restore_gamelog(NHFILE *);
+ staticfn void reset_oattached_mids(boolean);
+ /* these ones are declared non-static in extern.h if SFCTOOL is defined */
+-staticfn boolean restgamestate(NHFILE *);
++boolean restgamestate(NHFILE *);  /* Made public for iOS integration */
+ staticfn void rest_bubbles(NHFILE *);
+ staticfn void restore_gamelog(NHFILE *);
+ staticfn void restore_msghistory(NHFILE *);
+@@ -516,12 +516,13 @@ ghostfruit(struct obj *otmp)
+ #endif
+ 
+ #ifndef SFCTOOL
+-staticfn
++/* iOS: Made public for integration */
+ #endif
+ boolean
+ restgamestate(NHFILE *nhfp)
+ {
+     int i;
++    fprintf(stderr, "[RESTGAMESTATE] === ENTRY ===\n");
+     struct flag newgameflags;
+     struct context_info newgamecontext; /* all 0, but has some pointers */
+     struct obj *bc_obj;
+diff --git a/src/save.c b/src/save.c
+index 57c8bfb41..183cc1881 100644
+--- a/src/save.c
++++ b/src/save.c
+@@ -28,7 +28,7 @@ staticfn void savemon(NHFILE *, struct monst *);
+ staticfn void savemonchn(NHFILE *, struct monst *) NO_NNARGS;
+ staticfn void savetrapchn(NHFILE *, struct trap *) NO_NNARGS;
+ staticfn void save_gamelog(NHFILE *);
+-staticfn void savegamestate(NHFILE *);
++void savegamestate(NHFILE *);  /* Made public for iOS live saves */
+ staticfn void savelev_core(NHFILE *, xint8);
+ staticfn void save_msghistory(NHFILE *);
+ 
+@@ -261,7 +261,7 @@ save_gamelog(NHFILE *nhfp)
+         gg.gamelog = NULL;
+ }
+ 
+-staticfn void
++void  /* Made public for iOS live saves */
+ savegamestate(NHFILE *nhfp)
+ {
+     int i;

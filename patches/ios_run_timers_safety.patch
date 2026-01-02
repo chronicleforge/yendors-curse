@@ -1,0 +1,33 @@
+diff --git a/src/timeout.c b/src/timeout.c
+index 1b85d5398..5d3de08c3 100644
+--- a/src/timeout.c
++++ b/src/timeout.c
+@@ -2224,6 +2224,28 @@ run_timers(void)
+         curr = gt.timer_base;
+         gt.timer_base = curr->next;
+ 
++#ifdef IOS_PLATFORM
++        /* iOS SAFETY NET: If timer still needs fixup after retry in ios_restore_complete(),
++         * the object was genuinely destroyed or save file is corrupted.
++         * Log detailed diagnostics and clean up gracefully instead of crashing.
++         * NOTE: This should RARELY happen - ios_restore_complete() retries relinking! */
++        if (curr->needs_fixup) {
++            fprintf(stderr, "\n========== ORPHANED TIMER (needs_fixup=1) ==========\n");
++            fprintf(stderr, "Timer ID: %lu\n", curr->tid);
++            fprintf(stderr, "Kind: %d\n", curr->kind);
++            fprintf(stderr, "Function index: %d\n", curr->func_index);
++            fprintf(stderr, "Timeout: %ld (current move: %ld)\n", curr->timeout, svm.moves);
++            if (curr->kind == TIMER_OBJECT) {
++                fprintf(stderr, "o_id: %u (object not found)\n", curr->arg.a_uint);
++            }
++            fprintf(stderr, "ACTION: Timer destroyed to prevent crash\n");
++            fprintf(stderr, "=================================================\n\n");
++            (void) memset((genericptr_t) curr, 0, sizeof(timer_element));
++            free((genericptr_t) curr);
++            continue;
++        }
++#endif
++
+         if (curr->kind == TIMER_OBJECT)
+             (curr->arg.a_obj)->timed--;
+         (*timeout_funcs[curr->func_index].f)(&curr->arg, curr->timeout);

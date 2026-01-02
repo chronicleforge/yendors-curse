@@ -1,0 +1,26 @@
+diff --git a/src/pager.c b/src/pager.c
+index 061937687..ef59870c9 100644
+--- a/src/pager.c
++++ b/src/pager.c
+@@ -17,8 +17,8 @@ staticfn void trap_description(char *, int, coordxy, coordxy) NONNULLARG1;
+ staticfn void look_at_object(char *, coordxy, coordxy, int) NONNULLARG1;
+ staticfn void look_at_monster(char *, char *, struct monst *,
+                                                coordxy, coordxy) NONNULLARG13;
+-/* lookat() can return Null */
+-staticfn struct permonst *lookat(coordxy, coordxy, char *, char *) NONNULLPTRS;
++/* lookat() can return Null - EXPORTED FOR iOS BRIDGE */
++struct permonst *lookat(coordxy, coordxy, char *, char *) NONNULLPTRS;
+ staticfn boolean checkfile(char *, struct permonst *, unsigned,
+                                                             char *) NO_NNARGS;
+ staticfn int add_cmap_descr(int, int, int, int, coord,
+@@ -646,8 +646,9 @@ ice_descr(coordxy x, coordxy y, char *outbuf)
+ /*
+  * Return the name of the glyph found at (x,y).
+  * If not hallucinating and the glyph is a monster, also monster data.
++ * EXPORTED FOR iOS BRIDGE (magnifying glass inspection)
+  */
+-staticfn struct permonst *
++struct permonst *
+ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
+ {
+     struct monst *mtmp = (struct monst *) 0;

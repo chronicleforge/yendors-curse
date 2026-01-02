@@ -1,0 +1,19 @@
+diff --git a/src/allmain.c b/src/allmain.c
+index a1fad95c9..455eb8627 100644
+--- a/src/allmain.c
++++ b/src/allmain.c
+@@ -579,7 +579,14 @@ moveloop(boolean resuming)
+     if (!resuming)
+         maybe_do_tutorial();
+ 
++    /* iOS: Allow clean exit from game loop instead of exit(0)
++     * Check program_state.gameover which is set by done() or ios_request_game_exit()
++     * This allows the app to return from moveloop() and unload the dylib cleanly
++     */
+     for (;;) {
++        if (program_state.gameover) {
++            break;  /* Exit cleanly instead of calling exit(0) */
++        }
+         moveloop_core();
+     }
+ }

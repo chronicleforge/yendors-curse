@@ -1,0 +1,21 @@
+diff --git a/src/u_init.c b/src/u_init.c
+index 2ce7461bb..19e49a3ee 100644
+--- a/src/u_init.c
++++ b/src/u_init.c
+@@ -1411,6 +1411,16 @@ u_init_skills_discoveries(void)
+     find_ac();     /* get initial ac value */
+ }
+ 
++/* iOS bridge stub - templates are now const so no reset needed */
++void
++ios_reset_role_inventory_templates(void)
++{
++    /* No-op: Starting in NetHack 3.7.x, role inventory templates are declared
++     * as 'static const', so they cannot be modified. The original bug where
++     * ini_inv() modified trquan values (causing 64 touchstones on game 2) is
++     * no longer possible. This stub exists for backward compatibility. */
++}
++
+ #undef UNDEF_TYP
+ #undef UNDEF_SPE
+ #undef UNDEF_BLESS

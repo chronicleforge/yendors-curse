@@ -1,0 +1,18 @@
+diff --git a/src/options.c b/src/options.c
+index 090300fe1..408a6fd60 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -448,6 +448,13 @@ ask_do_tutorial(void)
+ {
+     boolean dotut = flags.tutorial;
+ 
++    /* iOS: Tutorial is not supported on mobile devices.
++     * Always return FALSE to skip the tutorial menu entirely.
++     * This prevents the menu from appearing even if opt_set_in_config[opt_tutorial]
++     * is FALSE (which happens when flags.tutorial is set programmatically).
++     */
++    return FALSE;
++
+     if (!opt_set_in_config[opt_tutorial]) {
+         winid win;
+         menu_item *sel;
